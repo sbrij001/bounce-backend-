@@ -13,6 +13,12 @@ class Api::V1::AuthController < ApplicationController
     end
   end
 
+  def show
+    id = request.headers['Authorization']
+    @user = User.find(id)
+    render json: {user: @user}
+  end
+
   private
 
   def user_login_params
