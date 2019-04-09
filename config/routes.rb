@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
-      resources :users, only: [:create]
+      resources :users, only: [:create, :show]
       post '/login', to: 'auth#create'
       get '/current_user', to: 'auth#show'
       get '/users', to: 'users#index'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :locations, only: [:index, :show]
       resources :playlists, only: [:index, :show]
       resources :songs, only: [:index, :show]
+      resources :user_playlists, only: [:index, :create]
 
     end
   end

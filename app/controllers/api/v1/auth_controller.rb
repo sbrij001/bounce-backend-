@@ -14,8 +14,8 @@ class Api::V1::AuthController < ApplicationController
   end
 
   def show
-    jwt = request.headers['Authorization']
-    id = JWT.decode(jwt, "secret ")[0]["user_id"]
+    jwt = request.headers['Authorization'].split(" ")[1]
+    id = JWT.decode(jwt, "my_s3cr3t")[0]["user_id"]
     @user = User.find(id)
     render json: {user: @user}
   end

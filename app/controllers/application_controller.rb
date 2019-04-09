@@ -7,6 +7,7 @@ class ApplicationController < ActionController::API
     end
 
     def auth_header
+      # byebug
       # { Authorization: 'Bearer <token>' }
       request.headers['Authorization']
     end
@@ -16,7 +17,7 @@ class ApplicationController < ActionController::API
         token = auth_header.split(' ')[1]
         # header: { 'Authorization': 'Bearer <token>' }
         begin
-          JWT.decode(token, 'my_s3cr3t', true, algorithm: 'HS256')
+          JWT.decode(token, 'my_s3cr3t')
         rescue JWT::DecodeError
           nil
         end
@@ -24,6 +25,7 @@ class ApplicationController < ActionController::API
     end
 
     def current_user
+      # byebug
       if decoded_token
         user_id = decoded_token[0]['user_id']
         @user = User.find_by(id: user_id)
@@ -31,6 +33,7 @@ class ApplicationController < ActionController::API
     end
 
     def logged_in?
+      # byebug
       !!current_user
     end
 
