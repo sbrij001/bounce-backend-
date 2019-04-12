@@ -18,6 +18,17 @@ class Api::V1::WebplayersController < ApplicationController
     end
   end
 
+  # def update
+  #   webplayer = Webplayer.new(webplayer_params)
+  #   if webplayer.save
+  #     serialized_data = ActiveModelSerializers::Adapter::Json.new(
+  #       WebplayerSerializer.new(webplayer)
+  #     ).serializable_hash
+  #     ActionCable.server.broadcast 'webplayers_channel', serialized_data
+  #     head :ok
+  #   end
+  # end
+
   private
 
   def webplayer_params
