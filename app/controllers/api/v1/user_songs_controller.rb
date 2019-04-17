@@ -1,4 +1,4 @@
-class UserSongsController < ApplicationController
+class Api::V1::UserSongsController < ApplicationController
 
   def create
     user_song = User_songs.new(user_songs_params)
@@ -11,6 +11,18 @@ class UserSongsController < ApplicationController
       head :ok
     end
   end
+
+  # def create
+  #   playedsong = User_songs.new(playedsong_params)
+  #   webplayer = Webplayer.find(playedsong_params[:webplayer_id])
+  #   if playedsong.save
+  #     serialized_data = ActiveModelSerializers::Adapter::Json.new(
+  #       PlayedsongsSerializer.new(playedsong)
+  #     ).serializable_hash
+  #     PlayedsongsChannel.broadcast_to webplayer, serialized_data
+  #     head :ok
+  #   end
+  # end
 
   private
 

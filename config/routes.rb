@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       resources :songs, only: [:index, :show]
       resources :user_playlists, only: [:index, :create]
       resources :webplayers
-      resources :messages, only: [:create]
+      resources :user_songs, only: [:create]
       mount ActionCable.server => '/cable'
 
     end

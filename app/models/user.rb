@@ -5,5 +5,6 @@ class User < ApplicationRecord
   has_many :user_playlists
   has_many :playlists, through: :user_playlists
   has_many :songs, through: :playlists
+  has_many :webplayers
 
 end

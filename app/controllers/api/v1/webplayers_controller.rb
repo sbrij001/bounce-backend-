@@ -32,6 +32,6 @@ class Api::V1::WebplayersController < ApplicationController
   private
 
   def webplayer_params
-    params.require(:webplayer).permit(:title)
+    params.require(:webplayer).permit(:title, :user_id)
   end
 end
