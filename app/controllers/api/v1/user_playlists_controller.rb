@@ -6,11 +6,12 @@ class Api::V1::UserPlaylistsController < ApplicationController
   end
 
   def create
-    if @user.valid?
-      @user_playlists = UserPlaylist.create(user_playlists_params)
-      render json: @userPlaylists
+    # byebug
+    @user_playlist = UserPlaylist.create(user_playlists_params)
+    if @user_playlist.valid?
+      render json: @user_playlist
     else
-      render json: { error: 'failed to create user' }, status: :not_acceptable
+      render json: { error: 'failed to create user playlist' }, status: :not_acceptable
     end
   end
 
