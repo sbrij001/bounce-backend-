@@ -1,25 +1,33 @@
-# README
+# Bounce
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### `Listen to music, browse playlists, and see what other users are listening to with Bounce!`
 
-Things you may want to cover:
+You must have an account to be able to view the website.
 
-* Ruby version
+Bounce is a music streaming application that will allow a user to sign up and log in. The user can then browse different grenres of music specifically playlists, add the playlist to their library, and see what other users are listening to. 
 
-* System dependencies
+## Link to the frontend  
 
-* Configuration
+https://github.com/sbrij001/bounce-front-end
 
-* Database creation
+## Run 
 
-* Database initialization
+### 1. `bundle install`
 
-* How to run the test suite
+### 2.`rails start`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Built With 
+  Ruby on Rails (Backend), Action Cable
 
-* ...
-# bounce-backend-
+  React.js (Frontend)
+
+  Semantic UI React
+
+### Created by 
+
+Shivani Brijmohan https://github.com/sbrij001
+
+## Demo 
+
+<img src="bounceGif.gif" alt="demonstration" width="400" height="150" />
